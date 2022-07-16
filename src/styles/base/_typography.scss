@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&display=swap");
+
+.hello {
+  font-family: $typo-text;
+  font-size: 6vw;
+}
+
+.big-typo {
+  font-family: $typo-title;
+  font-size: 18vw;
+  text-shadow: 0 0 20px;
+}
+
+.glowing-font {
+  font-family: $typo-title;
+  font-size: 1.8rem;
+  text-shadow: 0 0 5px;
+}
+
+.glowing-icon {
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px;
+}
+
+h2,
+h3,
+p,
+a,
+li,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-family: $typo-title;
+  font-size: 1.5rem;
+}
+
+p,
+li,
+button {
+  font-family: $typo-text;
+  font-size: 1rem;
+}
+
+a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: $colour-text;
+}
+
+i {
+  font-size: 1.8rem;
+  text-shadow: 0 0 5px $colour-text;
+}
+
+.bold {
+  font-family: $typo-title;
+  font-weight: bold;
+}
+
+strong {
+  text-shadow: 0 0 2px;
+  transition: all 250ms ease-in-out;
+  &:hover {
+    font-size: 1.1rem;
+    color: $colour-primary;
+    text-shadow: 0 0 10px;
+  }
+}
+
+@media all and (max-width: 280px) {
+  a {
+    font-size: 1rem;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  a {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  .hello {
+    font-size: 1.8vw;
+  }
+
+  .big-typo {
+    font-family: $typo-title;
+    font-size: 13vw;
+    text-shadow: 0 0 20px;
+  }
+
+  .glowing-font {
+    font-size: 2.5rem;
+  }
+  strong {
+    &:hover {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media all and (min-width: 1600px) {
+  p,
+  li,
+  button {
+    font-size: 1.5rem;
+  }
+
+  a {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 3.5rem;
+  }
+
+  .hello {
+    font-size: 1.8vw;
+  }
+
+  .big-typo {
+    font-family: $typo-title;
+    font-size: 13vw;
+    text-shadow: 0 0 20px;
+  }
+
+  .glowing-font {
+    font-size: 3.5rem;
+  }
+
+  .glowing-icon {
+    font-size: 5rem;
+  }
+  strong {
+    &:hover {
+      font-size: 1.7rem;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+// Landing page animations
+@keyframes flashing-neon {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  11% {
+    opacity: 0.1;
+  }
+  13% {
+    opacity: 1;
+  }
+  14% {
+    opacity: 0.4;
+  }
+  20% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0.9;
+  }
+  57% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 1;
+  }
+  63% {
+    opacity: 0.9;
+  }
+  81% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.1;
+  }
+  81% {
+    opacity: 0.7;
+  }
+  82% {
+    opacity: 0.2;
+  }
+  88% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// skills page animations
+
+@keyframes underline-bars {
+  0% {
+    width: 0%;
+    height: 7px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 70%;
+    height: 2px;
+  }
+}

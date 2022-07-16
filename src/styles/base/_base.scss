@@ -1,0 +1,40 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#root, body {
+  background-color: $colour-bg;
+  color: $colour-text;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 2%;
+}
+
+ul {
+  list-style: none;
+}
+
+@media all and (min-width: 720px){
+  #root {
+      padding: 0 15%;
+  }
+}
+
+@media all and (min-width: 1024px){
+  #root {
+      padding: 0 15%;
+  }
+}
+
+@media all and (min-width: 1600px){
+  #root {
+      padding: 0 20%;
+  }
+}
+

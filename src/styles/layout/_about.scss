@@ -1,0 +1,239 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex: 0;
+    margin: 2% 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    background-color: lighten($color: $colour-bg, $amount: 4%);
+    border: 2px solid $colour-text;
+    box-shadow: 0 0 3px $colour-text;
+    border-radius: 15px;
+    margin: 2% 0;
+    overflow: hidden;
+    &__topwindow {
+      width: 100%;
+      padding: 8px 0px;
+      border-bottom: 2px solid $colour-text;
+      background-color: $colour-bg;
+      &__round-button {
+        position: relative;
+        height: 15px;
+        width: 15px;
+        margin-left: 40px;
+        border-radius: 100%;
+        box-shadow: 0 0 3px $colour-text;
+        background-color: $colour-text;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          height: 15px;
+          width: 15px;
+          border-radius: 100%;
+          box-shadow: 0 0 3px $colour-text;
+        }
+        &::before {
+          background-color: $colour-primary;
+          box-shadow: 0 0 3px $colour-primary;
+          transform: translateX(-25px);
+        }
+        &::after {
+          background-color: $colour-secondary;
+          box-shadow: 0 0 3px $colour-secondary;
+          transform: translateX(25px);
+        }
+      }
+    }
+    &--1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex: 1;
+      padding: 5%;
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      padding: 5%;
+      &__me {
+        display: flex;
+        justify-content: space-between;
+        &--picture {
+          display: flex;
+          max-width: 100px;
+          max-height: 100px;
+          overflow: hidden;
+          border: 2px solid $colour-text;
+          box-shadow: 0 0 3px $colour-text;
+          border-radius: 20px;
+          & img {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+          }
+        }
+        &--text {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          & h3 {
+            text-align: left;
+            margin-left: 10px;
+          }
+          i {
+            font-size: 1rem;
+            text-shadow: 0 0 0;
+            margin-right: 10px;
+          }
+          & p {
+            margin-left: 12px;
+          }
+        }
+      }
+      & h3 {
+        text-align: center;
+        padding-bottom: 5%;
+      }
+      &--text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex: 1;
+      }
+    }
+    &--cv-btn {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      padding: 5px;
+      margin-top: 5%;
+      background-color: $colour-bg;
+      border: 2px solid $colour-text;
+      border-radius: 12px;
+      z-index: 1;
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+      }
+      &::after {
+        content: "Curriculum vitæ";
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        padding: 5px;
+        color: lighten($colour-primary, 15%);
+        text-shadow: 0 0 10px;
+        box-shadow: 0 0 8px $colour-text;
+        background: linear-gradient(
+          darken($colour-secondary, 30%),
+          darken($colour-secondary, 35%)
+        );
+        border-radius: 12px;
+        opacity: 0;
+        transition: opacity 250ms ease-in-out;
+      }
+    }
+    &__button-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      &--prev,
+      &--next {
+        background-color: transparent;
+        color: $colour-text;
+        border: none;
+        cursor: pointer;
+        margin: 0 10%;
+      }
+      &--prev {
+        display: flex;
+        justify-self: flex-start;
+      }
+      &--next {
+        display: flex;
+        justify-self: flex-end;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 360px) {
+  .about {
+    &__card {
+      &__content {
+        &__me {
+          &--picture {
+            max-width: 130px;
+            max-height: 130px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .about {
+    &__card {
+      &__content {
+        justify-content: center;
+        & h3 {
+          padding-bottom: 5%;
+        }
+        &__me {
+          &--picture {
+            max-width: 150px;
+            max-height: 150px;
+          }
+        }
+        &--text {
+          flex-direction: row;
+          margin-top: 2%;
+          & p {
+            flex: 1;
+            padding: 3%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 1600px) {
+  .about {
+    &__card {
+      &__content {
+        &__me {
+          &--picture {
+            max-width: 250px;
+            max-height: 250px;
+          }
+        }
+      }
+    }
+  }
+}

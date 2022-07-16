@@ -1,0 +1,122 @@
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    flex: 0;
+    margin: 2% 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    &__stack {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      margin: 10px 0 15px 0;
+      & h3 {
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+      }
+    }
+    &__description {
+      display: flex;
+      background-color: lighten($color: $colour-bg, $amount: 4%);
+      border: 2px solid $colour-text;
+      box-shadow: 0 0 3px $colour-text;
+      border-radius: 15px;
+      padding: 5%;
+      flex: 1;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      &--icons {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.5rem;
+      }
+      &--text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex: 1;
+        padding-top: 5%;
+      }
+      & a {
+        font-size: 120%;
+      }
+      &--front,
+      &--back,
+      &--tools {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      &--no-active-stack {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        & i {
+          font-size: 300%;
+          margin-bottom: 30px;
+        }
+        & p {
+          font-size: 150%;
+        }
+      }
+    }
+  }
+}
+
+.active-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-shadow: 0 0 3px $colour-text;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: 70%;
+    height: 2px;
+    background: $colour-primary;
+    box-shadow: 0 0 4px 2px $colour-primary;
+    border-radius: 10px;
+    animation: underline-bars 0.5s ease-in-out;
+  }
+}
+
+.inactive-stack {
+  opacity: 0.5;
+}
+
+@media all and (min-width: 1024px) {
+  .skills {
+    &__container {
+      &__description {
+        &--icons {
+          padding: 0 2%;
+          & i {
+            font-size: 3rem;
+          }
+        }
+        &--text {
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: space-between;
+          margin-top: 2%;
+          & p {
+            flex: 1;
+            padding: 2%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    position: relative;
+    &__links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 0%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: transparent;
+        transition: all .5s ease-in-out;
+        &__link {
+            transform: translateX(100%);
+            & a {
+                display: block;
+                padding: 0 5px;
+            }
+        }
+    }
+    &__burger {
+        display: block;
+        position: relative;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        &__bar {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: $colour-text;
+            border-radius: 3px;
+            transition: all .5s ease-in-out;
+            &::before, &::after {
+                content: "";
+                width: 30px;
+                height: 3px;
+                position: absolute;
+                left: 0;
+                background-color: $colour-text;
+                border-radius: 3px;
+                transition: all .5s ease-in-out;
+            }
+            &::before {
+                transform: translateY(-10px);
+            } 
+            &::after {
+                transform: translateY(10px);
+            }
+        }
+    }
+}
+
+.active-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-shadow: 0 0 3px $colour-text;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      width: 70%;
+      height: 2px;
+      background: $colour-secondary;
+      box-shadow: 0 0 4px 2px $colour-secondary;
+      border-radius: 10px;
+      animation: underline-bars 0.5s ease-in-out;
+    }
+  }
+
+  .inactive-nav {
+    opacity: 0.5;
+  }
+
+.show-nav {
+    & .navbar{
+        &__links {
+            width: 100%;
+            &__link {
+                transform: translateX(0%);
+                &--1 {
+                    transition: all .6s ease-in-out;
+                }
+                &--2 {
+                    transition: all .7s ease-in-out;
+                }
+                &--3 {
+                    transition: all .8s ease-in-out;
+                }
+                &--4 {
+                    transition: all .9s ease-in-out;
+                }
+            }
+        }
+        &__burger {
+            &__bar {
+                width: 0;
+                background-color: transparent;
+                &::before {
+                    transform: rotate(45deg);
+                }
+                &::after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width: 1024px) {
+    .navbar {
+      &__links {
+        &__link {
+            a {
+                padding: 0 20px;
+            }
+        }
+      }
+    }
+  }

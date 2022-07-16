@@ -1,0 +1,80 @@
+.work {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    flex: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    &__project {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      flex: 1;
+      margin: 2% 0;
+      border: 2px solid $colour-text;
+      box-shadow: 0 0 3px $colour-text;
+      border-radius: 15px;
+      overflow: hidden;
+      &--1 {
+        background-image: url("../../assets/thought-catalog-505eectW54k-unsplash-min.jpg");
+        background-size: 130%;
+        background-position: center;
+      }
+      &--2 {
+        background-image: url("../../assets/prateek-katyal-xv7-GlvBLFw-unsplash-min.jpg");
+        background-size: 130%;
+        background-position: right;
+      }
+      &__content {
+        display: flex;
+        flex-direction: column;
+        flex: 0.3;
+        overflow: scroll;
+        padding: 5%;
+        background-color: $colour-bg-transparent;
+        box-shadow: 0 -1px 30px $colour-bg-transparent;
+        transition: all .5s ease-in-out;
+        &__title {
+          text-align: center;
+        }
+        &__description {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.active-project {
+  flex: 1;
+}
+
+@media all and (min-width: 991px) {
+  .work {
+    &__container {
+      &__project {
+        align-items: flex-start;
+        &--1 {
+          background-size: 100%;
+        }
+        &--2 {
+          background-size: 100%;
+        }
+        &__text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          flex: 1;
+          width: 25%;
+          box-shadow: 8px 0 7px $colour-bg-transparent;
+        }
+      }
+    }
+  }
+}

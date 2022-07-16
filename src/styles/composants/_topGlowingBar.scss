@@ -1,0 +1,32 @@
+.top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 33.11px;
+  &__title {
+    max-width: min-content;
+    width: 0%;
+    opacity: 0;
+    color: $colour-primary;
+    overflow: hidden;
+    padding-right: 2%;
+    transform: translateX(-200px);
+    transition: all .5s ease-in-out;
+  }
+  &__glowing-bar {
+    display: flex;
+    width: 100%;
+    height: 3px;
+    border-radius: 50px;
+    background-color: $colour-primary;
+    box-shadow: 0 0 12px 8px $colour-primary;
+    animation: flashing-neon 10s infinite both;
+    // animation: growing-bars 2s ease-in-out 0s both,
+    //   flashing-neon 3s ease-in-out 0s both;
+  }
+}
+
+.landing-bar-top {
+  width: 0%;
+  transition: width 2s ease-in-out;
+}
